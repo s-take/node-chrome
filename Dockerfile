@@ -15,3 +15,9 @@ RUN apt-get update && apt-get install -y unzip && \
     
 # font
 RUN apt-get update && apt-get -y install fonts-ipafon* fonts-ipaexfon*
+
+# java & groovy
+RUN apt-get update && apt-get -y install openjdk-8-jdk
+RUN cd /opt && \
+    curl -L -o groovy-all-2.4.13.jar http://central.maven.org/maven2/org/codehaus/groovy/groovy-all/2.4.13/groovy-all-2.4.13.jar
+ENV GROOVY_JAR=/opt/groovy-all-2.4.13.jar
